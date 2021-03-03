@@ -39,6 +39,7 @@ function scrollActive(){
     })
 }
 window.addEventListener('scroll', scrollActive)
+
 /*- CHANGE BACKGROUND HEADER -*/
 function scrollHeader(){
     const header = document.getElementById('header')
@@ -55,4 +56,4 @@ window.addEventListener('scroll', scrollTop)
 
 /*- MIXITUP FILTER PORTFOLIO -*/
 
-/* Ling active portfolio */
+/* Link active portfolio */
