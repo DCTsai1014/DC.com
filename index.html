@@ -385,7 +385,7 @@
           </div> -->
         </div>
 
-        <form action="" class="contact__form">
+        <form action="" class="contact__form" method="POST">
           <div class="contact__inputs">
             <input type="text" placeholder="Name" class="contact__input" required>
             <input type="email" placeholder="Email" class="contact__input" required>
@@ -398,7 +398,7 @@
 
           <textarea name="" id="" cols="00" rows="7" placeholder="Message" class="contact__input"></textarea>
 
-          <input type="submit" value="Send Message" class="button contact__button">
+          <input type="submit" value="Send Message" class="button contact__button" onclick="sendMail()">
         </form>
       </div>
     </section>
@@ -430,6 +430,19 @@
 
   <!-- MAIN JS-->
   <script src="assets/js/main.js"></script>
+
+  <!-- SmtpJS -->
+  <script src="assets/js/smtp.js"></script>
+  <script>
+    function sendMail() {
+      Email.send({
+      SecureToken: "3738bcc7-703e-45df-985e-44fec085dd16",
+      To: 'd.kane1014@gmail.com',
+      }).then(
+      message => alert(message)
+      );
+    }
+  </script>
 </body>
 
 </html>
