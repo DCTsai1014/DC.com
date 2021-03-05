@@ -366,7 +366,7 @@ img {
 
 /*- ABOUT -*/
 .about__data {
-    text-align: center;
+    text-align: start;
 }
 
 .about__description span {
