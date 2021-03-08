@@ -290,7 +290,7 @@ img {
 .home__data h1 {
     display: block;
     width: fit-content;
-    font-size: 4rem;
+    font-size: 2.5rem;
     position: relative;
     color: transparent;
     animation: text_reveal .5s ease forwards;
@@ -429,11 +429,7 @@ img {
 
 /*- ABOUT -*/
 .about__data {
-<<<<<<< HEAD
     text-align: justify;
-=======
-    text-align: start;
->>>>>>> 4b4f391fd6b69e49b0a4b1b6b73e26d435717b00
 }
 
 .about__description span {
@@ -919,6 +915,10 @@ img {
     .bd-container {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .home__data h1 {
+        font-size: 4rem;
     }
 
     .qualification__container {
