@@ -429,7 +429,11 @@ img {
 
 /*- ABOUT -*/
 .about__data {
+<<<<<<< HEAD
     text-align: justify;
+=======
+    text-align: start;
+>>>>>>> 4b4f391fd6b69e49b0a4b1b6b73e26d435717b00
 }
 
 .about__description span {
