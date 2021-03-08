@@ -11,6 +11,7 @@
     --text-color: #524748;
     --first-color-light: #7B6F71;
     --first-color-lighten: #FBF9F9;
+    --h1-color: #ED293C;
 
     /* Font and typography */
     --body-font: 'Poppins', sans-serif;
@@ -185,7 +186,11 @@ img {
 
 .nav__logo,
 .nav__toggle {
-    color: var(--first-color-lighten)
+    color: var(--first-color-lighten);
+}
+
+.nav__logo span {
+    color: var(--h1-color);
 }
 
 .nav__toggle {
@@ -206,9 +211,9 @@ img {
 .active-link::after {
     content: '';
     position: absolute;
-    bottom: -.7rem;
+    bottom: 0;
     left: 0;
-    width: 65%;
+    width: 100%;
     height: 3px;
     background-color: var(--first-color-light);
 }
@@ -282,11 +287,69 @@ img {
     z-index: var(--z-tooltip);
 }
 
+.home__data h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+
+.home__data h1:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.home__data h1:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.home__data h1:nth-child(3) {
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 3s;
+}
+
+.home__data h1:nth-child(4) {
+    font-size: 1rem;
+    animation-delay: 4s;
+}
+
+.home__data h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--h1-color);
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+}
+
+
+.home__data h1:nth-child(1) span {
+    animation-delay: .5s;
+}
+
+
+.home__data h1:nth-child(2) span {
+    animation-delay: 1.25s;
+}
+
+
+.home__data h1:nth-child(3) span {
+    animation-delay: 1.75s;
+}
+
+.home__data h1:nth-child(4) span {
+    animation-delay: 2.5s;
+}
+
 .home__name {
     font-size: var(--biggest-font-size);
 }
 
-.home__greeting,
+/* .home__greeting,
 .home__profession {
     display: block;
     font-weight: var(--font-bold);
@@ -294,7 +357,7 @@ img {
 
 .home__greeting {
     font-size: .813rem;
-}
+} */
 
 .home__profession {
     font-size: .938rem;
@@ -366,7 +429,7 @@ img {
 
 /*- ABOUT -*/
 .about__data {
-    text-align: center;
+    text-align: justify;
 }
 
 .about__description span {
@@ -534,6 +597,10 @@ img {
     transform: scale(1.02);
 }
 
+.portfolio__img:hover {
+    transform: scale(1.1);
+}
+
 /* Active menu portfolio*/
 .active-portfolio {
     color: var(--first-color-dark);
@@ -684,11 +751,49 @@ img {
     color: var(--first-color-light);
 }
 
+/*- Keyframes -*/
+@keyframes hamburger_puls {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal {
+    100% {
+        color: white;
+    }
+}
+
+@keyframes text_reveal_name {
+    100% {
+        color: var(--h1-color);
+    }
+}
+
 /*- MEDIA QUERIES -*/
 @media screen and (min-width: 576px) {
     .home__img img {
         width: 330px;
     }
+
 
     .about__container,
     .qualification__container,
@@ -763,7 +868,7 @@ img {
     }
 
     .about__description {
-        text-align: initial;
+        text-align: justify;
     }
 
     .about__img {
