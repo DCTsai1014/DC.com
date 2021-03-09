@@ -100,3 +100,21 @@ gsap.from('.home__greeting, .home__name, .home__profession, .home__button', {opa
 gsap.from('.nav__logo, .nav__toggle', {opacity: 0, duration: 2, delay:1.2, y:25, ease:'expo.out', stagger:.2})
 gsap.from('.nav__item', {opacity: 0, duration: 2, delay:1.8, y:25, ease:'expo.out', stagger:.2})
 gsap.from('.home__social-icon', {opacity: 0, duration: 2, delay:2.3, y:25, ease:'expo.out', stagger:.2})
+
+/*- Send Email Info -*/
+function send(event){
+    event.preventDefault();
+    Email.send({
+    SecureToken: "7be9be33-3ce6-40f7-85d4-11748a0d47a3",
+    To: 'd.kane1014@gmail.com',
+    name: document.getElementById('name').value,
+    From: document.getElementById('email').value,
+    Body: document.getElementById('message').value
+    }).then(function(response){
+        if (response == 'OK') {
+            alert("Mail sent successfully");
+        } else {
+            throw new Error ("Error: " + response.statusText);
+        }
+    });
+}
