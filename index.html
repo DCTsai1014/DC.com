@@ -387,13 +387,14 @@
 
         <form method="POST" action="" class="contact__form">
           <div class="contact__inputs">
-            <input type="text" placeholder="Name" class="contact__input name" required>
-            <input type="email" placeholder="Email" class="contact__input email" required>
+            <input type="text" placeholder="Name" class="contact__input" id="name" required>
+            <input type="email" placeholder="Email" class="contact__input" id="email" required>
           </div>
 
-          <textarea name="" id="" cols="00" rows="7" placeholder="Message" class="contact__input"></textarea>
+          <textarea name="" id="" cols="00" rows="7" placeholder="Message" class="contact__input"
+            id="message"></textarea>
 
-          <input type="submit" value="Send Message" class="button contact__button" href="mailto:d.kane1014@gmail.com">
+          <input type="submit" value="Send Message" class="button contact__button" onclick="sendemail()">
         </form>
       </div>
     </section>
@@ -426,6 +427,7 @@
   <!-- MAIN JS-->
   <script src="assets/js/main.js"></script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 

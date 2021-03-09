@@ -102,14 +102,18 @@ gsap.from('.nav__item', {opacity: 0, duration: 2, delay:1.8, y:25, ease:'expo.ou
 gsap.from('.home__social-icon', {opacity: 0, duration: 2, delay:2.3, y:25, ease:'expo.out', stagger:.2})
 
 /*- Send Email Info -*/
-function send(event){
-    event.preventDefault();
+function sendemail(){
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var message = $('#message').val();
+    var Body='Name: '+name+'<br>Email: '+email+'<br>Subject: '+subject+'<br>Message: '+message;
+
     Email.send({
     SecureToken: "7be9be33-3ce6-40f7-85d4-11748a0d47a3",
     To: 'd.kane1014@gmail.com',
-    name: document.getElementById('name').value,
     From: document.getElementById('email').value,
-    Body: document.getElementById('message').value
+    Subject: "New message on contact from "+name,
+    Body: Body
     }).then(function(response){
         if (response == 'OK') {
             alert("Mail sent successfully");
