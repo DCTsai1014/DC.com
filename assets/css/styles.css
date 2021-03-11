@@ -427,6 +427,10 @@ img {
     background: none;
 }
 
+.button-link:hover {
+    color: var(--first-color-lighten);
+}
+
 /*- ABOUT -*/
 .about__data {
     text-align: justify;
